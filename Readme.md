@@ -110,6 +110,7 @@ return await Task.WhenAll(getUserTasks);
 Blocking the current thread as a means to wait for a Task to complete can result in deadlocks and blocked context threads, and can require significantly more complex error-handling. The following table provides guidance on how to deal with waiting for Tasks in a non-blocking way:
 
 Use this...             Instead of this...          When wishing to do this
+----------------------------------------------------------------------------------------------------
 await                   Task.Wait or Task.Result    Retrieving the result of a background task
 await Task.WhenAny      Task.WaitAny                Waiting for any task to complete
 await Task.WhenAll      Task.WaitAll                Waiting for all tasks to complete
